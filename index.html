@@ -8,14 +8,14 @@
   <!-- css -->
   <link rel="stylesheet" href="css/style.css">
 
-  <title>Document</title>
+  <title>Email List</title>
 </head>
 <body>
   
   <div id="app">
     
     <ul>
-      <li>{{mail.response}}</li>
+      <li v-for="(mail, index) in arrayMail">{{mail}}</li>
     </ul>
 
   </div>

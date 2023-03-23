@@ -15,14 +15,26 @@ const { createApp } = Vue
     data() {
       return {
         message: 'Hello Vue!',
-        mail: ''
+        result: '',
+        arrayMail:[]
+      }
+    },
+    methods:{
+      generateArrayMail(){
+        for(let i=0; i<10; i++){
+
+          axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then((response) => {
+              this.result = response.data;
+              console.log(this.result.response);
+              this.arrayMail.push(this.result.response);
+            });
+        }
       }
     },
     mounted(){
-      axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-        .then((response) =>{
-          this.mail = response.data;
-          console.log(this.mail.response);
-        });
+
+      this.generateArrayMail()
+
     }
   }).mount('#app')
