@@ -14,9 +14,8 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
-        message: 'Hello Vue!',
-        result: '',
-        arrayMail:[]
+        arrayMail:[],
+        result: ''
       }
     },
     methods:{
